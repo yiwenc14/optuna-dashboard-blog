@@ -1,12 +1,12 @@
 # **Level Up Your Hyperparameter Tuning with Optuna Dashboard: A Visual Guide for Movie Ratings Optimization**
 
-### Introduction
+## Introduction
 
 As machine learning practitioners, we know that hyperparameter tuning can be a make-or-break factor in model performance. If you’ve used Optuna before, you already know it’s one of the most powerful tools out there for hyperparameter optimization. But there’s one Optuna feature that often flies under the radar: **Optuna Dashboard**.
 
 Optuna Dashboard offers a visual, interactive way to monitor and manage your hyperparameter tuning studies. If you’re tired of sifting through raw logs and CSV files to track your experiments, Optuna Dashboard can be a game-changer. In this blog post, we’ll explore how to set up Optuna Dashboard to optimize a KNN-based recommendation system on a movie ratings dataset.
 
-### Why Use Optuna Dashboard?
+## Why Use Optuna Dashboard?
 
 Optuna Dashboard takes the core features of Optuna—like real-time optimization tracking and trial comparisons—and makes them visual and intuitive. Here’s why you should consider using it:
 
@@ -116,16 +116,21 @@ The output will print **Listening on http://127.0.0.1:8080/** and you can open i
 Here’s a quick tour of the Optuna Dashboard’s features:
 
 - **Trials Table**: This table displays each trial, showing the parameter values and objective values. You can sort, filter, and explore individual trials to find the best-performing ones.
-!(images/Trials\ (Table).png)
   
-- **Parameter Importance**: This section ranks hyperparameters by their impact on model performance, which is helpful for identifying the most influential parameters. If, for example, `k` ranks highest, it may have the biggest effect on RMSE.
-  # <place holder for image>
+![Trials Table](images/Trials_Table.png)
+  
+- **Hyperparameter Importance**: This section ranks hyperparameters by their impact on model performance, which is helpful for identifying the most influential parameters. If, for example, `k` ranks highest, it may have the biggest effect on RMSE.
+  
+![Hyperparameters Importance](images/Hyperparameters_Importance.png)
+
 
 - **Parallel Coordinates**: This plot lets you explore relationships among multiple parameters. You can see how different combinations of `k`, `min_k`, and `similarity` impact the objective function, helping you spot potential interactions.
-  # <place holder for image>
+  
+![Parallel Coordinates](images/Parallel_Coordinates.png)
 
-- **History and Intermediate Values**: The history tab shows the performance across trials, so you can track convergence. Intermediate values (if any) show progress within each trial, useful for early-stopping strategies.
-  # <place holder for image>
+- **History Plot**: The history plot provides a visual timeline of the optimization process, showing how the objective (RMSE) has changed over the trials. Each point represents the performance of a trial, while the red line tracks the best RMSE achieved so far. This plot helps you see if the model is consistently improving and whether the optimization process is converging. A flat red line toward the end indicates that the model has likely found an optimal set of parameters, as recent trials aren’t yielding better results.
+  
+![History Plot](images/History_Plot.png)
 
 Each view offers powerful insights, and you can include screenshots of these sections to show readers exactly what to expect!
 
@@ -151,7 +156,7 @@ With Optuna Dashboard, you have a visually guided way to optimize your models. H
 
 ---
 
-### Why Optuna Dashboard is Better than Optuna’s Legacy Visualization Tools
+## Why Optuna Dashboard is Better than Optuna’s Legacy Visualization Tools
 
 Optuna has always provided visualization features to analyze optimization results, but before the dashboard was introduced, these were limited to static plots generated in a Jupyter Notebook or script. While these legacy visualizations (like optimization history, parameter importance, and parallel coordinate plots) were helpful, they had several limitations that Optuna Dashboard has resolved:
 
@@ -161,6 +166,8 @@ Optuna has always provided visualization features to analyze optimization result
 
 2. **Real-Time Monitoring**:
    - The **"Live Update"** option in Optuna Dashboard provides real-time monitoring. When enabled, the dashboard will automatically refresh to show new trial results as they are completed. This feature is especially useful when running a long optimization process, as you can watch the performance of each trial as it finishes and see how the objective (in this case, RMSE) improves over time.
+![Live Update](images/Live_Update.png)
+
    - With **Live Update** enabled, Optuna Dashboard continuously updates plots like the **History** plot, **Hyperparameter Importance**, and other analytics sections. This allows you to monitor trends, identify early signs of convergence, and adjust parameters or stop the study if you achieve satisfactory results before all trials are completed.
     
 3. **Comprehensive Comparison Across Trials**:
@@ -171,17 +178,25 @@ Optuna has always provided visualization features to analyze optimization result
    - In Jupyter Notebooks, you often need to re-run cells or manage multiple plots to view different aspects of the study, which can be a hassle to maintain.
    - Optuna Dashboard consolidates all the information in a single interface, making it easier to integrate into your workflow. You simply start the dashboard, and all insights are accessible in one place without extra coding or re-running cells.
 
-5. **Intuitive UI for All Experience Levels**:
-   - Legacy visualizations require familiarity with Optuna’s plotting API and may be challenging for users who are new to Optuna or hyperparameter optimization.
-   - The dashboard’s user-friendly, graphical interface lowers the barrier to entry, making it accessible for beginners while still powerful enough for advanced users.
 ---
 
-### Conclusion
+## Limitations of Optuna Dashboard
+
+While Optuna Dashboard is a powerful tool for monitoring and analyzing hyperparameter optimization studies, it does come with certain limitations:
+
+1. **Limited Customization of Visualizations**:
+   - The dashboard offers useful built-in visualizations, like parallel coordinate plots and history graphs, but customization options are limited. Users cannot easily adjust colors, styles, or chart types, which may make it challenging to tailor the visuals for specific presentation needs.
+
+2. **Scalability Issues with Large-Scale Studies**:
+   - When dealing with studies containing a large number of trials (e.g., thousands or more), the dashboard can become slow or laggy, especially in the parallel coordinates and history plots. This can make it challenging to use for very extensive or high-dimensional studies.
+
+3. **No Built-In Export or Report Generation**:
+   - Optuna Dashboard does not offer options for exporting visualizations or generating reports directly. Users who want to save the results or include charts in external reports need to rely on screenshots or use Optuna’s Python-based visualization functions in Jupyter Notebook for more customized output.
+
+---
+
+## Conclusion
 
 Optuna Dashboard bridges the gap between complex hyperparameter tuning and intuitive insights. By visualizing the optimization process, it enables practitioners of all levels to analyze their models in real time. Give Optuna Dashboard a try on your next project, and see how it can help you unlock new levels of model performance.
 
 With this guide, you now have the tools to use Optuna Dashboard effectively. Take advantage of its visualization capabilities to gain deeper insights into your experiments. And remember, a picture is worth a thousand words—add screenshots to your blog post to showcase Optuna Dashboard’s features in action.
-
----
-
-This completes the blog post! Add screenshots wherever you feel they’ll make the content clearer or more engaging, especially in the "Exploring the Dashboard" section. Let me know if you need further assistance with any part of this!
