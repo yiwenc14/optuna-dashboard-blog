@@ -121,8 +121,7 @@ Here’s a quick tour of the Optuna Dashboard’s features:
   
 - **Hyperparameter Importance**: This section ranks hyperparameters by their impact on model performance, which is helpful for identifying the most influential parameters. If, for example, `k` ranks highest, it may have the biggest effect on RMSE.
   
-![Hyperparameters Importance](images/Hyperparameters_Importance.png)
-
+<img src="images/Hyperparameters_Importance.png" alt="Hyperparameters Importance" width="60%">
 
 - **Parallel Coordinates**: This plot lets you explore relationships among multiple parameters. You can see how different combinations of `k`, `min_k`, and `similarity` impact the objective function, helping you spot potential interactions.
   
@@ -145,14 +144,6 @@ print("Best hyperparameters: ", best_trial.params)
 ```
 
 Once you’ve identified the best parameters, you can integrate them into your model pipeline. Try running additional trials if you want to explore further, based on insights gained from the dashboard.
-
-### 8. Next Steps
-
-With Optuna Dashboard, you have a visually guided way to optimize your models. Here are a few suggestions for continuing your experimentation:
-
-- Try the dashboard on different models to see how parameter importance shifts.
-- Use the **Parallel Coordinates** plot to fine-tune relationships between hyperparameters.
-- Integrate Optuna Dashboard into your regular workflow for a deeper understanding of complex models.
 
 ---
 
