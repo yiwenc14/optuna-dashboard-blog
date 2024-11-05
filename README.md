@@ -119,7 +119,7 @@ Here’s a quick tour of the Optuna Dashboard’s features:
   
 ![Trials Table](images/Trials_Table.png)
   
-- **Hyperparameter Importance**: This section ranks hyperparameters by their impact on model performance, which is helpful for identifying the most influential parameters. If, for example, `k` ranks highest, it may have the biggest effect on RMSE.
+- **Hyperparameter Importance**: This section ranks hyperparameters by their impact on model performance, which is helpful for identifying the most influential parameters. If, for example, `min_k` ranks highest, it may have the biggest effect on RMSE.
   
 <img src="images/Hyperparameters_Importance.png" alt="Hyperparameters Importance" width="60%">
 
