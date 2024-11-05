@@ -116,7 +116,7 @@ The output will print **Listening on http://127.0.0.1:8080/** and you can open i
 Here’s a quick tour of the Optuna Dashboard’s features:
 
 - **Trials Table**: This table displays each trial, showing the parameter values and objective values. You can sort, filter, and explore individual trials to find the best-performing ones.
-  # <place holder for image>
+!(images/Trials\ (Table).png)
   
 - **Parameter Importance**: This section ranks hyperparameters by their impact on model performance, which is helpful for identifying the most influential parameters. If, for example, `k` ranks highest, it may have the biggest effect on RMSE.
   # <place holder for image>
