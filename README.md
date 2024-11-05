@@ -35,7 +35,7 @@ With these libraries installed, we’re ready to start coding!
 
 ### 2. Load and Explore the Data
 
-For this tutorial, let’s assume you have a movie ratings dataset (`movie_ratings.csv`) with columns like `userId`, `movieId`, and `rating`. We’ll use the `surprise` library to load and structure this data for model training.
+For this tutorial, let’s assume you have a movie ratings dataset (`movie_ratings.csv`) with columns like `user_id`, `movie_id`, and `rating`. We’ll use the `surprise` library to load and structure this data for model training.
 
 ```python
 import pandas as pd
@@ -44,7 +44,7 @@ from surprise import Dataset, Reader
 # Load the movie ratings dataset
 df = pd.read_csv('/path/to/your/movie_ratings.csv')
 reader = Reader(rating_scale=(1, 5))
-data = Dataset.load_from_df(df[['userId', 'movieId', 'rating']], reader)
+data = Dataset.load_from_df(df[['user_id', 'movie_id', 'rating']], reader)
 ```
 
 This code snippet loads the dataset and prepares it for the `surprise` library’s KNN-based models.
@@ -149,6 +149,31 @@ With Optuna Dashboard, you have a visually guided way to optimize your models. H
 - Use the **Parallel Coordinates** plot to fine-tune relationships between hyperparameters.
 - Integrate Optuna Dashboard into your regular workflow for a deeper understanding of complex models.
 
+---
+
+### Why Optuna Dashboard is Better than Optuna’s Legacy Visualization Tools
+
+Optuna has always provided visualization features to analyze optimization results, but before the dashboard was introduced, these were limited to static plots generated in a Jupyter Notebook or script. While these legacy visualizations (like optimization history, parameter importance, and parallel coordinate plots) were helpful, they had several limitations that Optuna Dashboard has resolved:
+
+1. **Interactive Exploration**:
+   - Legacy visualization tools produced static images, which meant you could only view a single set of results without real-time interaction.
+   - Optuna Dashboard, however, is fully interactive, allowing you to explore different views, filter trials, and zoom into specific sections. This interactivity gives you more flexibility to dive deep into results and find patterns that might be missed with static plots.
+
+2. **Real-Time Monitoring**:
+   - The **"Live Update"** option in Optuna Dashboard provides real-time monitoring. When enabled, the dashboard will automatically refresh to show new trial results as they are completed. This feature is especially useful when running a long optimization process, as you can watch the performance of each trial as it finishes and see how the objective (in this case, RMSE) improves over time.
+   - With **Live Update** enabled, Optuna Dashboard continuously updates plots like the **History** plot, **Hyperparameter Importance**, and other analytics sections. This allows you to monitor trends, identify early signs of convergence, and adjust parameters or stop the study if you achieve satisfactory results before all trials are completed.
+    
+3. **Comprehensive Comparison Across Trials**:
+   - Legacy plots were useful for analyzing individual aspects of the study, but comparing trials across different parameter combinations was not intuitive.
+   - With Optuna Dashboard, you have a unified interface where you can compare all trials in one place. The **Trials Table** allows for easy sorting and filtering, while the **Parallel Coordinates** and **Parameter Importance** plots show relationships and the impact of each parameter on the objective function.
+
+4. **Easier Workflow Integration**:
+   - In Jupyter Notebooks, you often need to re-run cells or manage multiple plots to view different aspects of the study, which can be a hassle to maintain.
+   - Optuna Dashboard consolidates all the information in a single interface, making it easier to integrate into your workflow. You simply start the dashboard, and all insights are accessible in one place without extra coding or re-running cells.
+
+5. **Intuitive UI for All Experience Levels**:
+   - Legacy visualizations require familiarity with Optuna’s plotting API and may be challenging for users who are new to Optuna or hyperparameter optimization.
+   - The dashboard’s user-friendly, graphical interface lowers the barrier to entry, making it accessible for beginners while still powerful enough for advanced users.
 ---
 
 ### Conclusion
